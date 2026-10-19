@@ -1,2 +1,3 @@
-Put your cover artwork here (png, jpg, webp, svg), then reference it in config/playlist.js.
+Hi!! Same as the AUDIO-TUT
+Put your cover artwork here (only png, jpg, webp, svg) and then reference it in config/playlist.js
 Example: covers/1.png
