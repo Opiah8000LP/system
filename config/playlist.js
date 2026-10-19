@@ -13,20 +13,17 @@
    ===================================================================== */
 export const PLAYLIST = [
   {
-    title: 'Demo Loop (replace me)',
-    artist: 'RDweeb',
-    file: 'music/demo-loop.wav',
-    cover: 'covers/default.svg',
-    bpm: 172
-  }
-
-  /* Copy this block for every new song:
-  ,{
-    title: 'Song Name',
+    title: 'somewhere...',
+    artist: '5L, safe 'n' sound, 2 star',
+    file: 'music/1.mp3',
+    cover: 'covers/1.png',
+    bpm: 86
+  },
+   {
+    title: 'test',
     artist: 'RDweeb',
     file: 'music/song-name.mp3',
     cover: 'covers/song-name.jpg',
     bpm: 170
   }
-  */
 ];
