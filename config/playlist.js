@@ -1,15 +1,6 @@
 /* =====================================================================
-   config/playlist.js — your tracks.
-   Drop audio into /music and artwork into /covers, then list them here.
-   Paths are relative to index.html. Order = playlist order.
-
-   Fields
-     title   shown in the player
-     artist  shown under the title
-     file    path to the audio (mp3 / ogg / wav / m4a / flac*)
-     cover   path to artwork (jpg / png / webp / svg). Optional.
-     bpm     optional. Used only if the browser blocks the audio analyser.
-     album   optional (shown on lock-screen controls)
+hi this is a simple config file for the playlist so you can add songs
+the bpm is rlly important cause its for the like reactivity, ok?
    ===================================================================== */
 export const PLAYLIST = [
   {
