@@ -1,0 +1,2 @@
+Put your audio files here (mp3, ogg, wav, m4a), then list them in config/playlist.js.
+Example: music/1.mp3

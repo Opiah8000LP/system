@@ -1,0 +1,1 @@
+Put your site/tab icon here as favicon.png (or change the path in config/site.js -> favicon).

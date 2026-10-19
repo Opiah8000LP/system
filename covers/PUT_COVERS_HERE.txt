@@ -1,0 +1,2 @@
+Put your cover artwork here (png, jpg, webp, svg), then reference it in config/playlist.js.
+Example: covers/1.png

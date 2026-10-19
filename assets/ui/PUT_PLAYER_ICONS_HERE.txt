@@ -1,0 +1,3 @@
+Put your player button icons here. File names are set in config/site.js -> player.icons:
+play.png pause.png prev.png next.png volume.png mute.png playlist.png close.png grip.png
+Any that is missing falls back to a plain text label.
