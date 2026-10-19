@@ -1,2 +1,3 @@
-Put your audio files here (mp3, ogg, wav, m4a), then list them in config/playlist.js.
-Example: music/1.mp3
+Hi!! I'm glad your using my website
+Put your audio files here (only mp3, ogg, wav, m4a) and then list them in config/playlist.js
+For example: music/1.mp3 (you can name it anything)
