@@ -1,7 +1,3 @@
-/* =====================================================================
-   style.css — layout, type and the (flat, draggable) player.
-   Colours come from CSS variables that js/core/world.js animates (--ink --blue --big --bg).
-   ===================================================================== */
 *{box-sizing:border-box;margin:0;padding:0}
 :root{--ink:#fff;--blue:#a596ff;--big:#fff;--bg:#0a0913;--vh:1vh}
 html,body{width:100%;height:100%;overflow:hidden;background:var(--bg);touch-action:none;
@@ -12,7 +8,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .msg code{font:500 .7em ui-monospace,Menlo,monospace;opacity:.8}
 @media (pointer:fine){html,body,a,button{cursor:none}}
 
-/* ---------- stacking ---------- */
+/* stacking */
 #bg{position:fixed;inset:0;width:100%;height:100%;display:block;z-index:0}
 .layer{position:fixed;inset:0;pointer-events:none;overflow:hidden}
 #bigs{z-index:1;will-change:transform;transform-origin:50% 50%}
@@ -23,7 +19,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .pcs{z-index:6}
 .gate{z-index:100}
 
-/* ---------- giant distorted title ---------- */
+/* giant distorted title */
 .big{position:absolute;left:0;width:100%;text-align:center;font-weight:800;letter-spacing:-.06em;line-height:.8;
   font-size:min(24vw,34vh);white-space:nowrap;color:var(--big)}
 .big.bot{bottom:0;transform:translateY(33%)}
@@ -32,7 +28,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .corner{position:absolute;top:14px;font-weight:800;font-size:clamp(14px,2vw,26px);letter-spacing:-.04em;color:var(--ink)}
 .corner.l{left:16px}.corner.r{right:16px}
 
-/* ---------- hub + 3D ring ---------- */
+/* hub + 3D ring */
 .hub{position:fixed;left:0;top:0;width:0;height:0;pointer-events:none}
 .hub b{position:absolute;left:-11px;top:-11px;width:22px;height:22px;background:var(--ink)}
 .ring{position:fixed;left:0;top:0;width:0;height:0;pointer-events:none;will-change:transform}
@@ -40,7 +36,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .ring span{position:absolute;color:var(--blue);font-weight:300;font-size:clamp(15px,2.2vw,30px);letter-spacing:-.02em}
 .ring hr{position:absolute;border:0;border-top:1px solid var(--blue)}
 
-/* ---------- link nodes ---------- */
+/* link nodes */
 .node{position:fixed;left:0;top:0;width:0;height:0;display:block;color:var(--ink);text-decoration:none;
   pointer-events:auto;will-change:transform;-webkit-user-drag:none;outline:none;touch-action:none}
 .node .sq{position:absolute;left:-8px;top:-8px;width:16px;height:16px;background:var(--ink);transition:transform .12s}
@@ -53,23 +49,20 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 body.gl .big,body.gl .lab,body.gl .corner,body.gl .pl-title{text-shadow:4px 0 #ff2a6d,-4px 0 #05d9e8}
 body.reduced-fx.gl .big,body.reduced-fx.gl .lab,body.reduced-fx.gl .pl-title{text-shadow:none}
 
-/* ---------- note (flat strip, no blur) ---------- */
+/* note */
 .note{position:fixed;left:50%;bottom:calc(10px + env(safe-area-inset-bottom));transform:translateX(-50%);
   width:min(94vw,780px);text-align:center;font:500 clamp(10.5px,1.1vw,12.5px)/1.5 ui-monospace,Menlo,Consolas,monospace;
   letter-spacing:.03em;color:var(--ink);pointer-events:none;padding:7px 14px;
   background:var(--bg);border-top:1px solid var(--ink)}
 
-/* ---------- cursor ---------- */
+/* cursor */
 #cur{position:fixed;left:0;top:0;width:34px;height:34px;margin:-17px 0 0 -17px;border:1px solid #fff;border-radius:50%;
   pointer-events:none;mix-blend-mode:difference;z-index:200;transition:width .15s,height .15s,margin .15s,border-radius .15s}
 #cur.h{width:70px;height:70px;margin:-35px 0 0 -35px;border-radius:0;transform:rotate(45deg)}
 #dot{position:fixed;left:0;top:0;width:6px;height:6px;margin:-3px 0 0 -3px;background:#fff;pointer-events:none;mix-blend-mode:difference;z-index:200}
 @media (pointer:coarse){#cur,#dot{display:none}}
 
-/* =====================================================================
-   PLAYER — flat pieces, each one draggable (see js/ui/drag.js)
-   Nothing here has a background card, glass or blur: just ink on the world.
-   ===================================================================== */
+/* player */
 .pcw{pointer-events:none;opacity:0;touch-action:none;will-change:transform;transition:opacity .6s .15s}
 body.ready .pcw{opacity:1;pointer-events:auto}
 .pcw.dragging{z-index:5}
@@ -88,7 +81,7 @@ body.ready .pcw{opacity:1;pointer-events:auto}
 .missing .pl-artist::after{content:"  ·  file not found";color:#ff6b8a}
 .pc-time{font:500 11px/1 ui-monospace,Menlo,monospace;letter-spacing:.04em;color:var(--ink);padding:4px 2px}
 
-/* buttons — your icon images, or plain text if there are none */
+/* buttons */
 .pb{display:grid;place-items:center;min-width:40px;height:40px;padding:0 8px;border:1px solid var(--ink);background:var(--bg);color:var(--ink);
   font:700 10.5px/1 ui-monospace,Menlo,monospace;letter-spacing:.08em;text-transform:uppercase;transition:transform .15s,background .15s,color .15s;outline:none}
 .pb .ic{display:block;width:22px;height:22px;object-fit:contain;pointer-events:none;-webkit-user-drag:none}
@@ -97,7 +90,7 @@ body.ready .pcw{opacity:1;pointer-events:auto}
 .pb.play{min-width:46px;height:46px}
 .list-open .pb.list{background:var(--ink);color:var(--bg)}
 
-/* sliders: the grip moves the piece, the track changes the value */
+/* sliders */
 .pc-slider{display:flex;align-items:center;gap:6px}
 .grip{flex:0 0 auto;display:grid;place-items:center;width:22px;height:22px;border:1px solid var(--ink);background:var(--bg);color:var(--ink);font:700 9px/1 ui-monospace,Menlo,monospace;letter-spacing:0;touch-action:none;outline:none}
 .grip .ic{width:14px;height:14px;object-fit:contain;pointer-events:none}
@@ -109,7 +102,7 @@ body.ready .pcw{opacity:1;pointer-events:auto}
 .track .knob{position:absolute;top:50%;width:11px;height:11px;margin:-5.5px 0 0 -5.5px;background:var(--ink);transform:rotate(45deg);transition:transform .12s}
 .track:hover .knob,.track:focus-visible .knob{transform:rotate(45deg) scale(1.5);background:var(--blue)}
 
-/* playlist panel — solid, no blur; drag it by the header */
+/* playlist panel */
 .pc-panel{width:min(340px,calc(100vw - 16px));max-height:min(52vh,340px);display:flex;flex-direction:column;background:var(--bg);color:var(--ink);border:1px solid var(--ink)}
 .pc-panel .ph{display:flex;justify-content:space-between;align-items:center;padding:4px 4px 4px 12px;font:700 11px/1 ui-monospace,Menlo,monospace;letter-spacing:.14em;text-transform:uppercase;border-bottom:1px solid var(--ink);touch-action:none;cursor:grab}
 .pc-panel .ph .pb{min-width:32px;height:32px}
@@ -129,7 +122,7 @@ body.ready .pcw{opacity:1;pointer-events:auto}
 .is-playing .pc-panel li.cur .eq{display:flex}
 @keyframes eq{from{transform:scaleY(.2)}to{transform:scaleY(1)}}
 
-/* ---------- phones ---------- */
+/* phones */
 @media (max-width:640px){
   .pb{min-width:42px;height:42px}
   .pb.play{min-width:46px;height:46px}
@@ -138,9 +131,7 @@ body.ready .pcw{opacity:1;pointer-events:auto}
 }
 @media (prefers-reduced-motion:reduce){.pl-item .eq i{animation:none}}
 
-/* =====================================================================
-   GATE — "tap to enter" (text only)
-   ===================================================================== */
+/* tap to enter */
 .gate{position:fixed;inset:0;background:rgba(5,4,10,.86);color:#fff;display:block;transition:opacity .45s}
 .gate.out{opacity:0;pointer-events:none}
 .gate-btn{position:absolute;inset:0;width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;color:#fff;outline:none}
