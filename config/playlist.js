@@ -10,11 +10,11 @@ export const PLAYLIST = [
     cover: 'covers/1.png',
     bpm: 86
   }
-,{
+/*,{
     title: 'test',
     artist: 'RDweeb',
     file: 'music/song-name.mp3',
     cover: 'covers/song-name.jpg',
     bpm: 170
-  }
+  }*/
 ];
